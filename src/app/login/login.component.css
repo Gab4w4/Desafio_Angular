@@ -55,6 +55,12 @@
   padding: 10px;
 }
 
+.input-wrapper{
+  background-color: white;
+  border-radius: 5px;
+  padding-right: 5px;
+}
+
 .buttonEnviar{
   background-color: #1b357e;
   width: 400px;
@@ -68,7 +74,7 @@
 
 .buttonEnviar:hover{
   background-color: #0d2566;
-  transform: scale(1.1);
+  transform: scale(0.97);
 }
 
 .checkbox{
@@ -86,97 +92,4 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-}
-
-.checkbox {
-  --width: 50px;
-  --height: 26px;
-  --slider-size: 22px;
-  --padding: 2px;
-  --primary-color: #4f46e5;
-  --hover-color: #6366f1;
-  --active-color: #4338ca;
-  --bg-off: #e5e7eb;
-  --bg-on: #4f46e5;
-  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
-  position: relative;
-  width: var(--width);
-  height: var(--height);
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  outline: none;
-  cursor: pointer;
-  margin: 0;
-  background-color: var(--bg-off);
-  border-radius: 100px;
-  transition: var(--transition);
-}
-
-.checkbox::before {
-  content: "";
-  position: absolute;
-  top: var(--padding);
-  left: var(--padding);
-  width: var(--slider-size);
-  height: var(--slider-size);
-  background-color: white;
-  border-radius: 50%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transform: translateX(0);
-  transition: var(--transition);
-}
-
-.checkbox:checked {
-  background-color: var(--bg-on);
-}
-
-.checkbox:checked::before {
-  transform: translateX(calc(var(--width) - var(--slider-size) - 2*var(--padding)));
-}
-
-.checkbox:hover:not(:checked) {
-  background-color: #d1d5db;
-}
-
-.checkbox:hover:checked {
-  background-color: var(--hover-color);
-}
-
-.checkbox:active:not(:checked)::before {
-  width: calc(var(--slider-size) + 4px);
-}
-
-.checkbox:active:checked::before {
-  width: calc(var(--slider-size) + 4px);
-  transform: translateX(calc(var(--width) - var(--slider-size) - 2*var(--padding) - 4px));
-}
-
-.checkbox:focus-visible {
-  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.3);
-}
-
-/* Versão com ícone (opcional) */
-.checkbox.with-icons::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  color: white;
-  font-size: 12px;
-  font-weight: bold;
-  opacity: 0.7;
-  transition: var(--transition);
-}
-
-.checkbox.with-icons::after {
-  content: "✕";
-  left: 8px;
-}
-
-.checkbox.with-icons:checked::after {
-  content: "✓";
-  left: auto;
-  right: 8px;
 }
