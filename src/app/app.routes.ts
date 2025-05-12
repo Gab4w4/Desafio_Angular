@@ -22,7 +22,7 @@ export const routes: Routes = [
     {
         path: "dashboard",
         pathMatch: "full",
-        // canActivate: [loginGuard],
+        canActivate: [loginGuard],
         loadComponent:  () => {
             return import("./pages/dashboard/dashboard.component")
             .then(c => c.DashboardComponent)

@@ -43,5 +43,12 @@ export class DashboardComponent implements OnInit{
     if(veiculo){
       this.veiculoSelecionado = veiculo
     }
+
+    this.dashboardService.getVinInfos(this.veiculoSelecionado.vin).subscribe({
+      error: () => {},
+      next: (vinInfos) => {
+        this.vinInfos = vinInfos
+      }
+    })
   }
 }

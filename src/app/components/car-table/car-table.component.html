@@ -11,14 +11,14 @@
   </thead>
   <tbody>
     <tr>
-      <td>
-        <input class="input-vin" type="text" placeholder="{{ vin }}" value="{{ vin }}">
+      <td class="d-flex">
+        <input (change)="onChangeVin($event)" class="input-vin" type="text" placeholder="{{ vin }}" value="{{ vin }}">
       </td>
-      <td>{{odometro}}Km</td>
-      <td>{{nivelCombustivel}}%</td>
-      <td>{{status.toUpperCase()}}</td>
-      <td>{{lat}}</td>
-      <td>{{long}}</td>
+      <td>{{ odometro }}Km</td>
+      <td>{{ nivelCombustivel }}%</td>
+      <td>{{ status.toUpperCase() }}</td>
+      <td>{{ lat }}</td>
+      <td>{{ long }}</td>
     </tr>
   </tbody>
 </table>
