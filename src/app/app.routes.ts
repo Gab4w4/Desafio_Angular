@@ -15,14 +15,14 @@ export const routes: Routes = [
         pathMatch: "full",
         canActivate: [loginGuard],
         loadComponent:  () => {
-            return import("./pages/home/home.component")    
+            return import("./pages/home/home.component")
             .then(c => c.HomeComponent)
         }
     },
     {
         path: "dashboard",
         pathMatch: "full",
-        canActivate: [loginGuard],
+        // canActivate: [loginGuard],
         loadComponent:  () => {
             return import("./pages/dashboard/dashboard.component")
             .then(c => c.DashboardComponent)

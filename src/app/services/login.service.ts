@@ -9,13 +9,13 @@ import { Observable, tap } from 'rxjs';
 
 export class LoginService {
   http = inject(HttpClient)
-  
+
   login(nome: string, senha: string): Observable<User> {
     return this.http.post<User>("http://localhost:3001/login", { nome, senha})
-    .pipe(  
+    .pipe(
       tap(
         (user) => {
-          sessionStorage.setItem("user", user.nome)
+          sessionStorage.setItem("email", user.email)
         }
       )
     )

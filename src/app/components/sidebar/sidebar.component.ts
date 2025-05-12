@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { Component, inject } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrl: './sidebar.component.css'
 })
 export class SidebarComponent {
-
+  router = inject(Router)
+  goToHome(){
+    this.router.navigate(["home"])
+  }
+  
+  goToDashboard(){
+    this.router.navigate(["dashboard"])
+  }
 }

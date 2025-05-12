@@ -1,43 +1,34 @@
-<div class="dashboard">
-  <div class="dashboard-card">
-    <div class="card">
-      <span></span>
-    </div>
-    <div class="card">
-      <span></span>
-    </div>
-    <div class="card">
-      <span></span>
-    </div>
-    <div class="card">
-      <span></span>
-    </div>
+<section class="cards">
+  <div class="select-dashboard">
+    <h2>Veículos</h2>
+    <select (change)="onChangeSelect($event)">
+      @for(v of veiculos; track v.id){
+        <option value="{{ v.id }}">{{ v.vehicle }}</option>
+      }
+    </select>
   </div>
 
-  <div class="dashboard-image">
-    <img src="/img/territory.png" alt="">
-  </div>
+  <app-card [titulo]="'Total de Vendas'" [valor]="veiculoSelecionado.volumetotal"></app-card>
+  <app-card [titulo]="'Conectados'" [valor]="veiculoSelecionado.connected"></app-card>
+  <app-card [titulo]="'Updates Software'" [valor]="veiculoSelecionado.softwareUpdates"></app-card>
+</section>
 
-  <table class="table" style="width: 60%;">
-    <thead>
-      <tr>
-        <th scope="col">Código - Vin <input class="input-vin" type="text" placeholder="Ex.: 2FRHDUYS2Y63NHD22454"></th>
-        <th scope="col">Odômetro</th>
-        <th scope="col">Nível de Combustível</th>
-        <th scope="col">Status</th>
-        <th scope="col">Lat.</th>
-        <th scope="col">Long.</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row"></th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>mdo</td>
-        <td>mdo</td>
-        <td>mdo</td>
-      </tr>
-    </tbody>
-  </table>
+<br><br>
+
+<section class="dashboard-image">
+  <img src="{{ veiculoSelecionado.img }}" alt="Modelo dos carros">
+</section>
+
+<br><br>
+
+<section class="section-table">
+  <app-car-table
+  [vin]="veiculoSelecionado.vin"
+  [lat] = "vinInfos.lat"
+  [long] = "vinInfos.long"
+  [nivelCombustivel] = "vinInfos.nivelCombustivel"
+  [odometro] = "vinInfos.odometro"
+  [status] = "vinInfos.status"
+  ></app-car-table>
+</section>
 

@@ -1,42 +1,34 @@
-.dashboard{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
-  margin-top: 50px;
-}
-
-.dashboard-card{
+.cards{
   display: flex;
   flex-direction: row;
-  gap: 20px;
   justify-content: center;
+  align-items: center;
 }
 
-.card{
+.select-dashboard{
   box-shadow: 4px 4px 4px 2px rgba(128, 128, 128, 0.305);
   width: 300px;
   height: 200px;
   margin: 10px;
   border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dashboard-image{
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .dashboard-image img{
-  width: 650px;
-  height: auto;
+  width: 60%;
 }
 
-.info-car{
+.section-table{
   display: flex;
-  flex-direction: row;
-  gap: 20px;
-}
-
-.input-vin{
-  width: 260px;
-  border-radius: 8px;
-  border: 1px solid rgba(128, 128, 128, 0.326);
-  padding: 5px;
-  margin-left: 10px;
+  justify-content: center;
 }
