@@ -3,16 +3,19 @@ import { CardComponent } from '../../components/card/card.component';
 import { CarTableComponent } from '../../components/car-table/car-table.component';
 import { DashboardService } from '../../services/dashboard.service';
 import { Veiculo, VinInfos } from '../../models/car';
+import { SidebarComponent } from '../../components/sidebar/sidebar.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [CardComponent, CarTableComponent],
+  imports: [CardComponent, CarTableComponent, SidebarComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
 
 export class DashboardComponent implements OnInit{
   dashboardService = inject(DashboardService)
+  router = inject(Router)
 
   veiculos: Veiculo[] = []
   veiculoSelecionado: Veiculo = { id: -1, connected: 0, volumetotal: 0, softwareUpdates: 0, vehicle: "", img: "", vin: "" }
@@ -50,5 +53,10 @@ export class DashboardComponent implements OnInit{
         this.vinInfos = vinInfos
       }
     })
+  }
+
+  logout(){
+    sessionStorage.clear()
+    this.router.navigate([""])
   }
 }

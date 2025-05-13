@@ -1,7 +1,9 @@
+<app-sidebar></app-sidebar>
+<button (click)="logout()" class="btn btn-danger">Logout</button>
 <section class="cards">
   <div class="select-dashboard">
     <h2>Veículos</h2>
-    <select (change)="onChangeSelect($event)">
+    <select (change)="onChangeSelect($event)" class="select-input">
       @for(v of veiculos; track v.id){
         <option value="{{ v.id }}">{{ v.vehicle }}</option>
       }
